@@ -103,7 +103,7 @@ class MCRConProtocol(asyncio.Protocol):
 			# TODO: handle payload fragmentation (4096 max size payload)
 
 			if self.rconwaitid != pkt['id']:
-				seld.log.warning("Received unexpected RCON reply")
+				self.log.warning("Received unexpected RCON reply")
 			self.rconwaitid = -1
 			self._sendnextcmd()
 
