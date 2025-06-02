@@ -21,6 +21,7 @@
 	<module name="minecraft" />
 	<module name="relayirctominecraft" />
 	<module name="relayminecrafttoirc" />
+	<!-- <module name="relaylogtoirc" /> -->
 	<module name="minecraftircwhitelist" />
 	<module name="minecraftversion" />
 
@@ -109,6 +110,18 @@
 		Relay (Minecraft to IRC) module config:
 	-->
 	<relayminecrafttoirc name="Minecraft">
+		<minecraft name="Minecraft" /> <!-- name of the Minecraft client config from above -->
+		<irc name="IRCNetwork"> <!-- name of the IRC client config from above -->
+			<!-- Add a <channel /> block for each IRC channel you wish to relay to. -->
+			<channel name="#minecraft" />
+		</irc>
+	</relayminecrafttoirc>
+
+	<!--
+		Relay (Log to IRC) module config:
+	-->
+	<relaylogtoirc name="Minecraft">
+		<log file="/path/to/minecraft.log" /> <!-- Path to the minecraft log file -->
 		<minecraft name="Minecraft" /> <!-- name of the Minecraft client config from above -->
 		<irc name="IRCNetwork"> <!-- name of the IRC client config from above -->
 			<!-- Add a <channel /> block for each IRC channel you wish to relay to. -->
